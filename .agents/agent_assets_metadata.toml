@@ -1,0 +1,20 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "z33RncO574nT8EV67xRfx"
+uri = "file://artifacts/easydose-site/public/images/canudo-dosador.png"
+type = "image"
+title = "Medicine dosing straw product photo"
+
+[[generated]]
+id = "cOoJHym5TgxcbeyAa1Rb2"
+uri = "file://artifacts/easydose-site/public/images/chupeta-condutora.png"
+type = "image"
+title = "Medicine conducting pacifier product photo"
+
+[[generated]]
+id = "bR36JfQwJW8Sh4M1Hzgaw"
+uri = "file://artifacts/easydose-site/public/images/copo-comprimidos.png"
+type = "image"
+title = "Pill concealing cup product photo"

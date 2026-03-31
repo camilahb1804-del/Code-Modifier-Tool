@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "EasyDose Site"
+version = "1.0.0"
+id = "artifacts/easydose-site"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24751
+
+[services.development]
+run = "pnpm --filter @workspace/easydose-site run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/easydose-site", "run", "build" ]
+publicDir = "artifacts/easydose-site/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24751"
+BASE_PATH = "/"
