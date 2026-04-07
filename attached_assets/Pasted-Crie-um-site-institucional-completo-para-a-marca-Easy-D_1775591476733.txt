@@ -1,0 +1,201 @@
+Crie um site institucional completo para a marca Easy Dose, com foco em conversão, clareza da solução e alta credibilidade, seguindo rigorosamente as diretrizes de design, identidade visual, estrutura e conteúdo abaixo.
+
+1. OBJETIVO DO SITE
+
+Desenvolver um site moderno e minimalista que:
+
+Explique claramente a solução da Easy Dose
+Gere confiança imediata em pais
+Reduza a percepção de risco do produto
+Converta visitantes em leads (captura de e-mail)
+Transmita uma imagem de marca inovadora, mas acessível
+2. IDENTIDADE VISUAL (SEGUIR RIGOROSAMENTE)
+Paleta de cores (usar exatamente):
+Verde: #BBE7BB
+Azul: #91B2EB
+Lilás: #E4C1F9
+Fundo: branco ou off-white suave
+Texto: cinza escuro (evitar preto puro)
+Uso das cores:
+Aplicação suave e equilibrada
+Evitar excesso de cores fortes
+Usar gradientes leves entre verde, azul e lilás
+Formas orgânicas no fundo (curvas suaves, estilo do mockup)
+3. TIPOGRAFIA
+Fonte principal: Chewy
+Usar apenas em:
+Logo
+Títulos principais (H1)
+Fonte secundária:
+Sans-serif moderna (ex: Inter, Poppins ou similar)
+Usar em textos, descrições e navegação
+4. LOGO
+
+Criar logo com as seguintes características:
+
+Texto: “Easy Dose”
+“Easy” em verde (#BBE7BB)
+“Dose” em azul (#91B2EB)
+Detalhes sutis em lilás (#E4C1F9)
+Tipografia arredondada (estilo Chewy)
+Estilo amigável, leve e moderno
+Pode incluir leve sombra ou profundidade suave
+5. DIREÇÃO DE DESIGN
+Estética minimalista e clean
+Remover totalmente:
+Ícones
+Emojis
+Caixas visuais pesadas
+Usar bastante espaço em branco
+Layout leve e bem espaçado
+Visual inspirado em healthtech premium + universo infantil sofisticado
+Priorizar tipografia e hierarquia visual
+6. ESTRUTURA DO SITE
+HEADER
+Logo à esquerda
+Menu à direita:
+Início
+Como funciona
+Blog
+Comprar
+Contato
+Botão destaque:
+👉 “Quero participar”
+HERO SECTION (PRINCIPAL)
+
+Layout:
+
+Esquerda: texto
+Direita: imagem de criança tomando remédio de forma tranquila
+
+Conteúdo:
+
+Título (Chewy):
+
+Dar remédio nunca foi tão fácil.
+
+Subtítulo:
+
+A Easy Dose transforma um momento difícil em algo simples, seguro e tranquilo para pais e crianças.
+
+CTA:
+👉 Botão: “Quero participar”
+
+Regras:
+
+NÃO usar “healthtech infantil”
+NÃO usar ícones
+NÃO usar caixas
+Fundo com formas orgânicas suaves
+PROVA SOCIAL (SUTIL E LIMPA)
+
+Texto simples, sem destaque visual:
+
+Solução desenvolvida com base na rotina real de pais e crianças.
+
+Sem números chamativos
+Sem emojis
+Sem elementos gráficos
+SEÇÃO: COMO FUNCIONA
+
+Explicar claramente:
+
+O problema: dificuldade de dar remédio para crianças
+A solução: como a Easy Dose resolve isso
+Benefícios:
+Menos estresse
+Mais segurança
+Melhor aceitação da criança
+
+Formato:
+
+Apenas texto bem estruturado
+Sem ícones
+SEÇÃO: POR QUE A EASY DOSE É DIFERENTE
+
+Blocos de texto (sem ícones):
+
+Exemplos:
+
+Desenvolvido com pais reais
+Foco na experiência da criança
+Design funcional e seguro
+Alternativa não invasiva
+SEÇÃO: DEPOIMENTOS
+Apenas texto
+Sem ícones
+Sem emojis
+
+Exemplo:
+
+“Mudou completamente nossa rotina em casa.”
+— Ana, mãe de 2 filhos
+
+PÁGINA: BLOG
+
+Criar aba separada com:
+
+Cards de conteúdo
+Layout clean
+
+Temas:
+
+Como dar remédio para crianças
+Dicas para pais
+Rotina infantil
+
+Objetivo:
+
+Autoridade
+SEO
+Educação do usuário
+PÁGINA: COMPRAR
+
+Criar página com 3 produtos:
+
+Canudo dosador
+Chupeta condutora
+Copo para comprimidos
+
+Para cada produto:
+
+Imagem
+Nome
+Breve descrição
+Status: Sold out
+
+CTA:
+👉 “Avise-me quando voltar”
+
+Campo:
+
+Input de e-mail para lista de espera
+CTA FINAL
+
+Mensagem:
+
+Faça parte das primeiras famílias a testar a Easy Dose
+
+Botão:
+👉 “Quero participar”
+
+7. TOM DE COMUNICAÇÃO
+Humano e próximo
+Simples e direto
+Sem linguagem técnica
+Sem tom médico
+Como uma marca que entende a dor real dos pais
+8. OBJETIVO FINAL DO DESIGN
+
+O site deve:
+
+Transmitir confiança imediatamente
+Ser visualmente leve e agradável
+Explicar a solução de forma rápida
+Reduzir dúvidas e inseguranças
+Gerar conversão (leads)
+IMPORTANTE
+Ser fiel ao estilo visual do mockup (cores, tipografia, leveza)
+Priorizar simplicidade e clareza
+Evitar qualquer elemento desnecessário
+Design deve parecer profissional, atual e pronto para lançamento
