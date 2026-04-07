@@ -1,6 +1,8 @@
 import { Link } from "wouter";
 import { useState } from "react";
 
+const QUIZ_URL = "https://seuformulario.com";
+
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -16,7 +18,7 @@ export function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       <div className="container flex h-16 items-center justify-between px-5 mx-auto max-w-6xl">
         <Link href="/" className="flex items-center gap-1">
-          <span className="font-serif text-2xl tracking-wide leading-none" style={{ letterSpacing: "0.01em" }}>
+          <span className="text-2xl leading-none" style={{ fontFamily: "'Nunito', sans-serif", letterSpacing: "0.01em", fontWeight: 800 }}>
             <span style={{ color: "#6cb86c" }}>Easy</span>
             <span style={{ color: "#5a90d4" }}>Dose</span>
           </span>
@@ -36,11 +38,13 @@ export function Navbar() {
 
         <div className="hidden md:flex items-center">
           <a
-            href="#cta"
-            className="inline-flex items-center justify-center rounded-full px-6 py-2.5 text-sm font-semibold transition-colors"
+            href={QUIZ_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold transition-all hover:scale-[1.02]"
             style={{ background: "#BBE7BB", color: "#2a4a2a" }}
           >
-            Quero participar
+            Qual o melhor método para mim?
           </a>
         </div>
 
@@ -78,11 +82,14 @@ export function Navbar() {
             </a>
           ))}
           <a
-            href="#cta"
-            className="mt-1 inline-flex items-center justify-center rounded-full px-6 py-2.5 text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/80 transition-colors"
+            href={QUIZ_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-1 inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold transition-colors"
+            style={{ background: "#BBE7BB", color: "#2a4a2a" }}
             onClick={() => setMenuOpen(false)}
           >
-            Quero participar
+            Qual o melhor método para mim?
           </a>
         </div>
       )}

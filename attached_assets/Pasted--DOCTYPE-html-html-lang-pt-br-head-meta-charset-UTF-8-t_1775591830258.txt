@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Easy Dose</title>
+  <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #fdfdfd;
+      color: #333;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+    }
+
+    .logo {
+      font-family: 'Chewy', cursive;
+      font-size: 32px;
+    }
+
+    .logo span:first-child {
+      color: #BBE7BB;
+    }
+
+    .logo span:last-child {
+      color: #91B2EB;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #555;
+      font-size: 14px;
+    }
+
+    .cta {
+      background: linear-gradient(90deg, #91B2EB, #E4C1F9);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 80px 60px;
+    }
+
+    .hero-text {
+      max-width: 500px;
+    }
+
+    .hero h1 {
+      font-family: 'Chewy', cursive;
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+
+    .section {
+      padding: 80px 60px;
+      max-width: 900px;
+    }
+
+    .section h2 {
+      font-family: 'Chewy', cursive;
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .products {
+      display: flex;
+      gap: 30px;
+    }
+
+    .product {
+      border: 1px solid #eee;
+      padding: 20px;
+      border-radius: 10px;
+      width: 30%;
+    }
+
+    .product h3 {
+      margin-top: 0;
+    }
+
+    .email-box {
+      margin-top: 10px;
+    }
+
+    input {
+      padding: 10px;
+      width: 100%;
+      margin-top: 5px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    footer {
+      padding: 40px;
+      text-align: center;
+      color: #777;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo"><span>Easy</span> <span>Dose</span></div>
+  <nav>
+    <a href="#">Início</a>
+    <a href="#">Como funciona</a>
+    <a href="#">Blog</a>
+    <a href="#">Comprar</a>
+    <a href="#">Contato</a>
+    <a class="cta" href="#">Quero participar</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-text">
+    <h1>Dar remédio nunca foi tão fácil.</h1>
+    <p>A Easy Dose transforma um momento difícil em algo simples, seguro e tranquilo para pais e crianças.</p>
+    <a class="cta" href="#">Quero participar</a>
+  </div>
+  <div>
+    <img src="https://via.placeholder.com/400" alt="Criança tomando remédio">
+  </div>
+</section>
+
+<section class="section">
+  <p>Solução desenvolvida com base na rotina real de pais e crianças.</p>
+</section>
+
+<section class="section">
+  <h2>Como funciona</h2>
+  <p>A Easy Dose resolve a dificuldade de administrar medicamentos em crianças com soluções práticas e seguras.</p>
+  <p>Menos estresse, mais tranquilidade e maior aceitação no dia a dia.</p>
+</section>
+
+<section class="section">
+  <h2>Por que a Easy Dose é diferente</h2>
+  <p>Desenvolvido com pais reais</p>
+  <p>Foco na experiência da criança</p>
+  <p>Design funcional e seguro</p>
+  <p>Alternativa não invasiva</p>
+</section>
+
+<section class="section">
+  <h2>Relatos</h2>
+  <p>“Mudou completamente nossa rotina em casa.” — Ana</p>
+  <p>“Muito mais fácil dar remédio agora.” — Juliana</p>
+</section>
+
+<section class="section">
+  <h2>Comprar</h2>
+
+  <div class="products">
+
+    <div class="product">
+      <h3>Canudo dosador</h3>
+      <p>Sold out</p>
+      <div class="email-box">
+        <input placeholder="Seu email">
+      </div>
+    </div>
+
+    <div class="product">
+      <h3>Chupeta condutora</h3>
+      <p>Sold out</p>
+      <div class="email-box">
+        <input placeholder="Seu email">
+      </div>
+    </div>
+
+    <div class="product">
+      <h3>Copo para comprimidos</h3>
+      <p>Sold out</p>
+      <div class="email-box">
+        <input placeholder="Seu email">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <h2>Blog</h2>
+  <p>Conteúdos sobre como facilitar a rotina com crianças e medicamentos.</p>
+</section>
+
+<section class="section">
+  <h2>Faça parte das primeiras famílias</h2>
+  <a class="cta" href="#">Quero participar</a>
+</section>
+
+<footer>
+  © Easy Dose
+</footer>
+
+</body>
+</html>

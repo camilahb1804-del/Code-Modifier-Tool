@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+
+const QUIZ_URL = "https://seuformulario.com";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -29,15 +30,6 @@ function OrgaBackground() {
 }
 
 export default function Home() {
-  const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-    setEmail("");
-  };
-
   return (
     <main className="flex min-h-screen flex-col bg-background overflow-x-hidden">
 
@@ -50,7 +42,7 @@ export default function Home() {
             <motion.div initial="hidden" animate="visible" variants={stagger}>
               <motion.h1
                 variants={fadeUp}
-                className="font-serif text-5xl md:text-6xl lg:text-7xl tracking-wide text-foreground mb-7 leading-tight"
+                className="font-serif text-5xl md:text-6xl lg:text-7xl text-foreground mb-7 leading-tight"
                 style={{ letterSpacing: "0.01em" }}
               >
                 Dar remédio nunca foi tão fácil.
@@ -61,18 +53,21 @@ export default function Home() {
               >
                 A Easy Dose transforma um momento difícil em algo simples, seguro e tranquilo para pais e crianças.
               </motion.p>
-              <motion.div variants={fadeUp}>
+              <motion.div variants={fadeUp} className="flex flex-col items-start gap-2">
                 <a
-                  href="#cta"
+                  href={QUIZ_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center rounded-full px-9 py-4 text-base font-semibold transition-all duration-200 hover:scale-[1.03] hover:shadow-lg focus:outline-none"
                   style={{ background: "#BBE7BB", color: "#2a4a2a" }}
                 >
-                  Quero participar
+                  Qual o melhor método para mim?
                 </a>
+                <span className="text-xs text-muted-foreground pl-2">Leva menos de 1 minuto</span>
               </motion.div>
             </motion.div>
 
-            {/* Right visual — organic card with child image concept */}
+            {/* Right visual */}
             <motion.div
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -86,13 +81,11 @@ export default function Home() {
                   minHeight: "380px"
                 }}
               >
-                {/* Decorative inner shapes */}
                 <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 380" fill="none" aria-hidden="true">
                   <ellipse cx="320" cy="60" rx="120" ry="90" fill="#BBE7BB" fillOpacity="0.4" />
                   <ellipse cx="80" cy="300" rx="100" ry="80" fill="#91B2EB" fillOpacity="0.3" />
                   <ellipse cx="200" cy="380" rx="180" ry="80" fill="#E4C1F9" fillOpacity="0.25" />
                 </svg>
-                {/* Central message */}
                 <div className="relative z-10 flex flex-col items-center justify-center h-full min-h-[380px] text-center px-10 py-14">
                   <p className="font-serif text-4xl text-foreground/80 mb-5 leading-snug" style={{ letterSpacing: "0.01em" }}>
                     Sem choro.<br />Sem estresse.<br />Sem luta.
@@ -107,7 +100,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== PROVA SOCIAL (limpa, sutil) ===== */}
+      {/* ===== PROVA SOCIAL ===== */}
       <section className="py-12 border-y border-border/40">
         <div className="container mx-auto px-5 max-w-3xl text-center">
           <motion.p
@@ -126,7 +119,7 @@ export default function Home() {
       <section id="como-funciona" className="py-28">
         <div className="container mx-auto px-5 max-w-3xl">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} variants={stagger}>
-            <motion.h2 variants={fadeUp} className="font-serif text-4xl md:text-5xl text-foreground mb-6 tracking-wide" style={{ letterSpacing: "0.01em" }}>
+            <motion.h2 variants={fadeUp} className="font-serif text-4xl md:text-5xl text-foreground mb-6" style={{ letterSpacing: "0.01em" }}>
               Como funciona
             </motion.h2>
             <motion.p variants={fadeUp} className="text-lg text-muted-foreground mb-16 leading-relaxed">
@@ -174,11 +167,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== POR QUE A EASY DOSE É DIFERENTE ===== */}
+      {/* ===== POR QUE É DIFERENTE ===== */}
       <section className="py-28 border-y border-border/40" style={{ background: "#f9fbf9" }}>
         <div className="container mx-auto px-5 max-w-3xl">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} variants={stagger}>
-            <motion.h2 variants={fadeUp} className="font-serif text-4xl md:text-5xl text-foreground mb-16 tracking-wide" style={{ letterSpacing: "0.01em" }}>
+            <motion.h2 variants={fadeUp} className="font-serif text-4xl md:text-5xl text-foreground mb-16" style={{ letterSpacing: "0.01em" }}>
               Por que a Easy Dose é diferente
             </motion.h2>
 
@@ -215,7 +208,7 @@ export default function Home() {
       <section className="py-28">
         <div className="container mx-auto px-5 max-w-3xl">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} variants={stagger}>
-            <motion.h2 variants={fadeUp} className="font-serif text-4xl md:text-5xl text-foreground mb-16 tracking-wide" style={{ letterSpacing: "0.01em" }}>
+            <motion.h2 variants={fadeUp} className="font-serif text-4xl md:text-5xl text-foreground mb-16" style={{ letterSpacing: "0.01em" }}>
               O que os pais dizem
             </motion.h2>
 
@@ -263,41 +256,26 @@ export default function Home() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
             <motion.h2
               variants={fadeUp}
-              className="font-serif text-4xl md:text-5xl text-foreground mb-5 tracking-wide"
+              className="font-serif text-4xl md:text-5xl text-foreground mb-5"
               style={{ letterSpacing: "0.01em" }}
             >
-              Faça parte das primeiras famílias a testar a Easy Dose
+              Descubra qual produto é ideal para o seu filho
             </motion.h2>
-            <motion.p variants={fadeUp} className="text-base text-foreground/60 mb-10">
-              Deixe seu e-mail e receba acesso antecipado quando lançarmos.
+            <motion.p variants={fadeUp} className="text-base text-foreground/60 mb-10 leading-relaxed">
+              Responda 7 perguntas rápidas e receba a recomendação certa para a rotina da sua família.
             </motion.p>
-            {submitted ? (
-              <motion.p variants={fadeUp} className="text-base font-medium text-foreground/80">
-                Obrigado! Você está na lista. Entraremos em contato em breve.
-              </motion.p>
-            ) : (
-              <motion.form
-                variants={fadeUp}
-                onSubmit={handleSubmit}
-                className="flex flex-col sm:flex-row gap-3 justify-center max-w-md mx-auto"
+            <motion.div variants={fadeUp} className="flex flex-col items-center gap-3">
+              <a
+                href={QUIZ_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-full px-10 py-4 text-base font-semibold transition-all duration-200 hover:scale-[1.03] hover:shadow-xl focus:outline-none"
+                style={{ background: "#BBE7BB", color: "#2a4a2a" }}
               >
-                <input
-                  type="email"
-                  required
-                  placeholder="Seu melhor e-mail"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 h-12 rounded-full px-5 text-sm bg-white/70 border border-white/60 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
-                />
-                <button
-                  type="submit"
-                  className="h-12 rounded-full px-7 text-sm font-semibold transition-all hover:scale-[1.02]"
-                  style={{ background: "#BBE7BB", color: "#2a4a2a" }}
-                >
-                  Quero participar
-                </button>
-              </motion.form>
-            )}
+                Qual o melhor método para mim?
+              </a>
+              <span className="text-sm text-foreground/50">Leva menos de 1 minuto</span>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -306,7 +284,7 @@ export default function Home() {
       <section id="contato" className="py-20 border-t border-border/50">
         <div className="container mx-auto px-5 max-w-3xl text-center">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
-            <motion.h2 variants={fadeUp} className="font-serif text-3xl text-foreground mb-4 tracking-wide" style={{ letterSpacing: "0.01em" }}>
+            <motion.h2 variants={fadeUp} className="font-serif text-3xl text-foreground mb-4" style={{ letterSpacing: "0.01em" }}>
               Fale com a gente
             </motion.h2>
             <motion.p variants={fadeUp} className="text-base text-muted-foreground leading-relaxed">
