@@ -18,7 +18,7 @@ export function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       <div className="container flex h-16 items-center justify-between px-5 mx-auto max-w-6xl">
         <Link href="/" className="flex items-center gap-1">
-          <span className="text-2xl leading-none" style={{ fontFamily: "'Nunito', sans-serif", letterSpacing: "0.01em", fontWeight: 800 }}>
+          <span className="text-2xl leading-none" style={{ fontFamily: "'Fredoka', sans-serif", letterSpacing: "0.01em", fontWeight: 700 }}>
             <span style={{ color: "#6cb86c" }}>Easy</span>
             <span style={{ color: "#5a90d4" }}>Dose</span>
           </span>
