@@ -30,7 +30,7 @@ export function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className="text-sm font-bold text-muted-foreground hover:text-foreground transition-colors"
             >
               {link.label}
             </a>
@@ -76,7 +76,7 @@ export function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-1"
+              className="text-sm font-bold text-muted-foreground hover:text-foreground transition-colors py-1"
               onClick={() => setMenuOpen(false)}
             >
               {link.label}
