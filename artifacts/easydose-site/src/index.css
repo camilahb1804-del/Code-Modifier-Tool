@@ -1,13 +1,6 @@
-/* ── Sweet Mango (fonte principal — títulos e destaques) ──────── */
-@font-face {
-  font-family: 'Sweet Mango';
-  src: url('/fonts/SweetMango.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-/* ── Inter (fonte secundária — corpo de texto) ────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+/* ── Chewy (fonte principal — títulos) ───────────────────────── */
+/* ── Inter (corpo de texto) ─────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Chewy&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 @plugin "@tailwindcss/typography";
@@ -84,31 +77,31 @@
   --elevate-1: rgba(0,0,0, .03);
   --elevate-2: rgba(0,0,0, .08);
 
-  --background: 0 0% 99%;
-  --foreground: 220 20% 22%;
-  --border: 220 15% 88%;
-  --card: 0 0% 100%;
-  --card-foreground: 220 20% 22%;
-  --card-border: 220 15% 90%;
-  --sidebar: 0 0% 99%;
-  --sidebar-foreground: 220 20% 22%;
-  --sidebar-border: 220 15% 88%;
-  --sidebar-primary: 120 46% 80%;
-  --sidebar-primary-foreground: 220 20% 22%;
+  --background: 38 27% 96%;
+  --foreground: 238 42% 28%;
+  --border: 238 20% 86%;
+  --card: 38 20% 99%;
+  --card-foreground: 238 42% 28%;
+  --card-border: 238 15% 88%;
+  --sidebar: 38 27% 96%;
+  --sidebar-foreground: 238 42% 28%;
+  --sidebar-border: 238 20% 86%;
+  --sidebar-primary: 264 56% 72%;
+  --sidebar-primary-foreground: 0 0% 100%;
   --sidebar-accent: 218 65% 74%;
-  --sidebar-accent-foreground: 220 20% 22%;
-  --sidebar-ring: 120 46% 70%;
-  --popover: 0 0% 100%;
-  --popover-foreground: 220 20% 22%;
-  --popover-border: 220 15% 88%;
-  --primary: 120 46% 80%;
-  --primary-foreground: 220 20% 22%;
+  --sidebar-accent-foreground: 238 42% 28%;
+  --sidebar-ring: 264 56% 65%;
+  --popover: 38 20% 99%;
+  --popover-foreground: 238 42% 28%;
+  --popover-border: 238 20% 86%;
+  --primary: 264 56% 72%;
+  --primary-foreground: 0 0% 100%;
   --secondary: 218 65% 74%;
-  --secondary-foreground: 220 20% 22%;
-  --muted: 220 15% 95%;
-  --muted-foreground: 220 15% 52%;
-  --accent: 282 82% 87%;
-  --accent-foreground: 220 20% 22%;
+  --secondary-foreground: 238 42% 28%;
+  --muted: 238 15% 93%;
+  --muted-foreground: 238 18% 52%;
+  --accent: 282 60% 85%;
+  --accent-foreground: 238 42% 28%;
   --destructive: 0 72% 51%;
   --destructive-foreground: 0 0% 100%;
   --input: 220 15% 85%;
@@ -119,8 +112,8 @@
   --chart-4: 53 100% 78%;
   --chart-5: 21 83% 65%;
 
-  --app-font-sans: 'Sweet Mango', sans-serif;
-  --app-font-serif: 'Sweet Mango', sans-serif;
+  --app-font-sans: 'Chewy', sans-serif;
+  --app-font-serif: 'Chewy', sans-serif;
   --app-font-body: 'Inter', sans-serif;
   --app-font-mono: Menlo, monospace;
   --radius: .625rem;

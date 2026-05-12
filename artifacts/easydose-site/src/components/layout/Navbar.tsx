@@ -43,7 +43,7 @@ export function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold transition-all hover:scale-[1.02]"
-            style={{ background: "#BBE7BB", color: "#2a4a2a" }}
+            style={{ background: "hsl(264, 56%, 72%)", color: "#fff" }}
           >
             Qual o melhor método para mim?
           </a>
@@ -87,7 +87,7 @@ export function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             className="mt-1 inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold transition-colors"
-            style={{ background: "#BBE7BB", color: "#2a4a2a" }}
+            style={{ background: "hsl(264, 56%, 72%)", color: "#fff" }}
             onClick={() => setMenuOpen(false)}
           >
             Qual o melhor método para mim?

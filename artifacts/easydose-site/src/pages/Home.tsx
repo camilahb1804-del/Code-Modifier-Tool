@@ -45,7 +45,8 @@ export default function Home() {
                 className="font-serif text-5xl md:text-6xl lg:text-7xl text-foreground mb-7 leading-tight"
                 style={{ letterSpacing: "0.01em" }}
               >
-                Dar remédio nunca foi tão fácil.
+                Dar remédio nunca foi tão{" "}
+                <span style={{ color: "hsl(264, 56%, 58%)" }}>fácil.</span>
               </motion.h1>
               <motion.p
                 variants={fadeUp}
@@ -59,7 +60,7 @@ export default function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center rounded-full px-9 py-4 text-base font-semibold transition-all duration-200 hover:scale-[1.03] hover:shadow-lg focus:outline-none"
-                  style={{ background: "#BBE7BB", color: "#2a4a2a" }}
+                  style={{ background: "hsl(264, 56%, 72%)", color: "#fff" }}
                 >
                   Qual o melhor método para mim?
                 </a>
@@ -269,7 +270,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-full px-10 py-4 text-base font-semibold transition-all duration-200 hover:scale-[1.03] hover:shadow-xl focus:outline-none"
-                style={{ background: "#BBE7BB", color: "#2a4a2a" }}
+                style={{ background: "hsl(264, 56%, 72%)", color: "#fff" }}
               >
                 Qual o melhor método para mim?
               </a>
