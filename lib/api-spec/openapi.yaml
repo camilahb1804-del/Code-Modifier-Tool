@@ -10,7 +10,57 @@ servers:
 tags:
   - name: health
     description: Health operations
+  - name: leads
+    description: Email lead capture
 paths:
+  /leads/quiz:
+    post:
+      operationId: submitQuizLead
+      tags: [leads]
+      summary: Submit quiz answers and optional email
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/QuizLeadInput"
+      responses:
+        "201":
+          description: Lead saved
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LeadResponse"
+        "400":
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+  /leads/waitlist:
+    post:
+      operationId: submitWaitlist
+      tags: [leads]
+      summary: Subscribe to product waitlist
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/WaitlistInput"
+      responses:
+        "201":
+          description: Email saved
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LeadResponse"
+        "400":
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
   /healthz:
     get:
       operationId: healthCheck
@@ -26,6 +76,45 @@ paths:
                 $ref: "#/components/schemas/HealthStatus"
 components:
   schemas:
+    QuizLeadInput:
+      type: object
+      properties:
+        email:
+          type: string
+          format: email
+        answers:
+          type: object
+          additionalProperties: true
+      required:
+        - answers
+    WaitlistInput:
+      type: object
+      properties:
+        email:
+          type: string
+          format: email
+        productId:
+          type: string
+      required:
+        - email
+        - productId
+    LeadResponse:
+      type: object
+      properties:
+        ok:
+          type: boolean
+        id:
+          type: integer
+      required:
+        - ok
+        - id
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+      required:
+        - error
     HealthStatus:
       type: object
       properties:

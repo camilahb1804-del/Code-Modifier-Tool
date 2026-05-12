@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { submitQuizLead } from "@workspace/api-client-react";
 
 type QuestionType = "single" | "multiple" | "email";
 
@@ -162,16 +163,29 @@ export default function Quiz() {
   const [step, setStep] = useState<"intro" | number | "done">("intro");
   const [answers, setAnswers] = useState<Answers>({});
   const [direction, setDirection] = useState(1);
+  const [submitting, setSubmitting] = useState(false);
 
-  const currentIndex = typeof step === "number" ? step : -1;
   const current = typeof step === "number" ? questions[step] : null;
   const progress = typeof step === "number" ? ((step + 1) / questions.length) * 100 : 0;
 
-  function goNext() {
+  async function goNext() {
     setDirection(1);
     if (typeof step === "number") {
-      if (step < questions.length - 1) setStep(step + 1);
-      else setStep("done");
+      if (step < questions.length - 1) {
+        setStep(step + 1);
+      } else {
+        setSubmitting(true);
+        try {
+          const email = (answers["email"] as string) || undefined;
+          const { email: _e, ...answerData } = answers;
+          await submitQuizLead({ answers: answerData, ...(email ? { email } : {}) });
+        } catch {
+          // submit silencioso — não bloqueia o usuário
+        } finally {
+          setSubmitting(false);
+        }
+        setStep("done");
+      }
     } else if (step === "intro") {
       setStep(0);
     }
@@ -403,11 +417,11 @@ export default function Quiz() {
                 </button>
                 <button
                   onClick={goNext}
-                  disabled={!canAdvance()}
+                  disabled={!canAdvance() || submitting}
                   className="inline-flex items-center justify-center rounded-full px-8 py-3.5 text-base font-semibold transition-all duration-200 hover:scale-[1.03] hover:shadow-md focus:outline-none disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100"
                   style={{ background: PURPLE, color: "#fff" }}
                 >
-                  {step === questions.length - 1 ? "Ver resultado →" : "Próximo →"}
+                  {submitting ? "Salvando…" : step === questions.length - 1 ? "Ver resultado →" : "Próximo →"}
                 </button>
               </div>
             </motion.div>

@@ -5,24 +5,205 @@
  * API specification
  * OpenAPI spec version: 0.1.0
  */
-import { useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 import type {
+  MutationFunction,
   QueryFunction,
   QueryKey,
+  UseMutationOptions,
+  UseMutationResult,
   UseQueryOptions,
   UseQueryResult,
 } from "@tanstack/react-query";
 
-import type { HealthStatus } from "./api.schemas";
+import type {
+  ErrorResponse,
+  HealthStatus,
+  LeadResponse,
+  QuizLeadInput,
+  WaitlistInput,
+} from "./api.schemas";
 
 import { customFetch } from "../custom-fetch";
-import type { ErrorType } from "../custom-fetch";
+import type { ErrorType, BodyType } from "../custom-fetch";
 
 type AwaitedInput<T> = PromiseLike<T> | T;
 
 type Awaited<O> = O extends AwaitedInput<infer T> ? T : never;
 
 type SecondParameter<T extends (...args: never) => unknown> = Parameters<T>[1];
+
+/**
+ * @summary Submit quiz answers and optional email
+ */
+export const getSubmitQuizLeadUrl = () => {
+  return `/api/leads/quiz`;
+};
+
+export const submitQuizLead = async (
+  quizLeadInput: QuizLeadInput,
+  options?: RequestInit,
+): Promise<LeadResponse> => {
+  return customFetch<LeadResponse>(getSubmitQuizLeadUrl(), {
+    ...options,
+    method: "POST",
+    headers: { "Content-Type": "application/json", ...options?.headers },
+    body: JSON.stringify(quizLeadInput),
+  });
+};
+
+export const getSubmitQuizLeadMutationOptions = <
+  TError = ErrorType<ErrorResponse>,
+  TContext = unknown,
+>(options?: {
+  mutation?: UseMutationOptions<
+    Awaited<ReturnType<typeof submitQuizLead>>,
+    TError,
+    { data: BodyType<QuizLeadInput> },
+    TContext
+  >;
+  request?: SecondParameter<typeof customFetch>;
+}): UseMutationOptions<
+  Awaited<ReturnType<typeof submitQuizLead>>,
+  TError,
+  { data: BodyType<QuizLeadInput> },
+  TContext
+> => {
+  const mutationKey = ["submitQuizLead"];
+  const { mutation: mutationOptions, request: requestOptions } = options
+    ? options.mutation &&
+      "mutationKey" in options.mutation &&
+      options.mutation.mutationKey
+      ? options
+      : { ...options, mutation: { ...options.mutation, mutationKey } }
+    : { mutation: { mutationKey }, request: undefined };
+
+  const mutationFn: MutationFunction<
+    Awaited<ReturnType<typeof submitQuizLead>>,
+    { data: BodyType<QuizLeadInput> }
+  > = (props) => {
+    const { data } = props ?? {};
+
+    return submitQuizLead(data, requestOptions);
+  };
+
+  return { mutationFn, ...mutationOptions };
+};
+
+export type SubmitQuizLeadMutationResult = NonNullable<
+  Awaited<ReturnType<typeof submitQuizLead>>
+>;
+export type SubmitQuizLeadMutationBody = BodyType<QuizLeadInput>;
+export type SubmitQuizLeadMutationError = ErrorType<ErrorResponse>;
+
+/**
+ * @summary Submit quiz answers and optional email
+ */
+export const useSubmitQuizLead = <
+  TError = ErrorType<ErrorResponse>,
+  TContext = unknown,
+>(options?: {
+  mutation?: UseMutationOptions<
+    Awaited<ReturnType<typeof submitQuizLead>>,
+    TError,
+    { data: BodyType<QuizLeadInput> },
+    TContext
+  >;
+  request?: SecondParameter<typeof customFetch>;
+}): UseMutationResult<
+  Awaited<ReturnType<typeof submitQuizLead>>,
+  TError,
+  { data: BodyType<QuizLeadInput> },
+  TContext
+> => {
+  return useMutation(getSubmitQuizLeadMutationOptions(options));
+};
+
+/**
+ * @summary Subscribe to product waitlist
+ */
+export const getSubmitWaitlistUrl = () => {
+  return `/api/leads/waitlist`;
+};
+
+export const submitWaitlist = async (
+  waitlistInput: WaitlistInput,
+  options?: RequestInit,
+): Promise<LeadResponse> => {
+  return customFetch<LeadResponse>(getSubmitWaitlistUrl(), {
+    ...options,
+    method: "POST",
+    headers: { "Content-Type": "application/json", ...options?.headers },
+    body: JSON.stringify(waitlistInput),
+  });
+};
+
+export const getSubmitWaitlistMutationOptions = <
+  TError = ErrorType<ErrorResponse>,
+  TContext = unknown,
+>(options?: {
+  mutation?: UseMutationOptions<
+    Awaited<ReturnType<typeof submitWaitlist>>,
+    TError,
+    { data: BodyType<WaitlistInput> },
+    TContext
+  >;
+  request?: SecondParameter<typeof customFetch>;
+}): UseMutationOptions<
+  Awaited<ReturnType<typeof submitWaitlist>>,
+  TError,
+  { data: BodyType<WaitlistInput> },
+  TContext
+> => {
+  const mutationKey = ["submitWaitlist"];
+  const { mutation: mutationOptions, request: requestOptions } = options
+    ? options.mutation &&
+      "mutationKey" in options.mutation &&
+      options.mutation.mutationKey
+      ? options
+      : { ...options, mutation: { ...options.mutation, mutationKey } }
+    : { mutation: { mutationKey }, request: undefined };
+
+  const mutationFn: MutationFunction<
+    Awaited<ReturnType<typeof submitWaitlist>>,
+    { data: BodyType<WaitlistInput> }
+  > = (props) => {
+    const { data } = props ?? {};
+
+    return submitWaitlist(data, requestOptions);
+  };
+
+  return { mutationFn, ...mutationOptions };
+};
+
+export type SubmitWaitlistMutationResult = NonNullable<
+  Awaited<ReturnType<typeof submitWaitlist>>
+>;
+export type SubmitWaitlistMutationBody = BodyType<WaitlistInput>;
+export type SubmitWaitlistMutationError = ErrorType<ErrorResponse>;
+
+/**
+ * @summary Subscribe to product waitlist
+ */
+export const useSubmitWaitlist = <
+  TError = ErrorType<ErrorResponse>,
+  TContext = unknown,
+>(options?: {
+  mutation?: UseMutationOptions<
+    Awaited<ReturnType<typeof submitWaitlist>>,
+    TError,
+    { data: BodyType<WaitlistInput> },
+    TContext
+  >;
+  request?: SecondParameter<typeof customFetch>;
+}): UseMutationResult<
+  Awaited<ReturnType<typeof submitWaitlist>>,
+  TError,
+  { data: BodyType<WaitlistInput> },
+  TContext
+> => {
+  return useMutation(getSubmitWaitlistMutationOptions(options));
+};
 
 /**
  * Returns server health status

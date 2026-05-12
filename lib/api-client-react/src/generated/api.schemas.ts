@@ -5,6 +5,27 @@
  * API specification
  * OpenAPI spec version: 0.1.0
  */
+export type QuizLeadInputAnswers = { [key: string]: unknown };
+
+export interface QuizLeadInput {
+  email?: string;
+  answers: QuizLeadInputAnswers;
+}
+
+export interface WaitlistInput {
+  email: string;
+  productId: string;
+}
+
+export interface LeadResponse {
+  ok: boolean;
+  id: number;
+}
+
+export interface ErrorResponse {
+  error: string;
+}
+
 export interface HealthStatus {
   status: string;
 }

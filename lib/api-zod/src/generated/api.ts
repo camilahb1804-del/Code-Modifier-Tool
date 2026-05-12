@@ -8,6 +8,22 @@
 import * as zod from "zod";
 
 /**
+ * @summary Submit quiz answers and optional email
+ */
+export const SubmitQuizLeadBody = zod.object({
+  email: zod.string().email().optional(),
+  answers: zod.record(zod.string(), zod.unknown()),
+});
+
+/**
+ * @summary Subscribe to product waitlist
+ */
+export const SubmitWaitlistBody = zod.object({
+  email: zod.string().email(),
+  productId: zod.string(),
+});
+
+/**
  * Returns server health status
  * @summary Health check
  */

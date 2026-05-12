@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
+import { submitWaitlist } from "@workspace/api-client-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -36,10 +37,24 @@ const products = [
 
 export default function Shop() {
   const [submitted, setSubmitted] = useState<Record<string, boolean>>({});
+  const [loading, setLoading] = useState<Record<string, boolean>>({});
+  const [emails, setEmails] = useState<Record<string, string>>({});
+  const [error, setError] = useState<Record<string, string>>({});
 
-  const handleSubmit = (e: React.FormEvent, id: string) => {
+  const handleSubmit = async (e: React.FormEvent, id: string) => {
     e.preventDefault();
-    setSubmitted(prev => ({ ...prev, [id]: true }));
+    const email = emails[id]?.trim();
+    if (!email) return;
+    setLoading(prev => ({ ...prev, [id]: true }));
+    setError(prev => ({ ...prev, [id]: "" }));
+    try {
+      await submitWaitlist({ email, productId: id });
+      setSubmitted(prev => ({ ...prev, [id]: true }));
+    } catch {
+      setError(prev => ({ ...prev, [id]: "Erro ao salvar. Tente novamente." }));
+    } finally {
+      setLoading(prev => ({ ...prev, [id]: false }));
+    }
   };
 
   return (
@@ -68,7 +83,6 @@ export default function Shop() {
                   alt={product.name} 
                   className="w-full h-full object-contain mix-blend-multiply opacity-90 hover:opacity-100 transition-opacity"
                   onError={(e) => {
-                    // Fallback visual if generation is slow or fails
                     (e.target as HTMLElement).style.display = 'none';
                     e.currentTarget.parentElement?.classList.add('bg-secondary/20');
                   }}
@@ -84,19 +98,30 @@ export default function Shop() {
               {/* Waitlist Form */}
               <div className="mt-auto">
                 {submitted[product.id] ? (
-                  <div className="bg-primary/10 border border-primary/20 text-primary-foreground px-6 py-4 rounded-xl text-center">
-                    <p className="text-sm font-medium text-foreground">Você será notificado quando o produto voltar!</p>
+                  <div className="bg-primary/10 border border-primary/20 px-6 py-4 rounded-xl text-center">
+                    <p className="text-sm font-medium text-foreground">
+                      ✅ Você será notificado quando o produto voltar!
+                    </p>
                   </div>
                 ) : (
                   <form onSubmit={(e) => handleSubmit(e, product.id)} className="space-y-3">
-                    <Input 
-                      type="email" 
-                      placeholder="Seu melhor e-mail" 
-                      required 
+                    <Input
+                      type="email"
+                      placeholder="Seu melhor e-mail"
+                      required
+                      value={emails[product.id] ?? ""}
+                      onChange={(e) => setEmails(prev => ({ ...prev, [product.id]: e.target.value }))}
                       className="h-12 bg-transparent border-border"
                     />
-                    <Button type="submit" className="w-full h-12 bg-foreground text-background hover:bg-foreground/90">
-                      Avise-me quando voltar
+                    {error[product.id] && (
+                      <p className="text-xs text-destructive">{error[product.id]}</p>
+                    )}
+                    <Button
+                      type="submit"
+                      disabled={loading[product.id]}
+                      className="w-full h-12 bg-foreground text-background hover:bg-foreground/90 disabled:opacity-60"
+                    >
+                      {loading[product.id] ? "Salvando…" : "Avise-me quando voltar"}
                     </Button>
                   </form>
                 )}
