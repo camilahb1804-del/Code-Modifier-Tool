@@ -1,4 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap');
+/* Para ativar Mango AC: substitua o @import abaixo por:
+@font-face {
+  font-family: 'Mango AC';
+  src: url('/fonts/MangoAC.woff2') format('woff2'),
+       url('/fonts/MangoAC.woff') format('woff');
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+E troque as variáveis --app-font-sans e --app-font-serif para 'Mango AC'
+*/
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 @plugin "@tailwindcss/typography";
@@ -110,8 +121,8 @@
   --chart-4: 53 100% 78%;
   --chart-5: 21 83% 65%;
 
-  --app-font-sans: 'Fredoka', sans-serif;
-  --app-font-serif: 'Fredoka', sans-serif;
+  --app-font-sans: 'Nunito', sans-serif;
+  --app-font-serif: 'Nunito', sans-serif;
   --app-font-mono: Menlo, monospace;
   --radius: .625rem;
 
