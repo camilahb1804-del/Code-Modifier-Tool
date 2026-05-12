@@ -1,7 +1,7 @@
 import { Link } from "wouter";
 import { useState } from "react";
 
-const QUIZ_URL = "https://seuformulario.com";
+const QUIZ_URL = "/quiz";
 
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -40,8 +40,6 @@ export function Navbar() {
         <div className="hidden md:flex items-center">
           <a
             href={QUIZ_URL}
-            target="_blank"
-            rel="noopener noreferrer"
             className="inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold transition-all hover:scale-[1.02]"
             style={{ background: "hsl(264, 56%, 72%)", color: "#fff" }}
           >
@@ -84,8 +82,6 @@ export function Navbar() {
           ))}
           <a
             href={QUIZ_URL}
-            target="_blank"
-            rel="noopener noreferrer"
             className="mt-1 inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold transition-colors"
             style={{ background: "hsl(264, 56%, 72%)", color: "#fff" }}
             onClick={() => setMenuOpen(false)}

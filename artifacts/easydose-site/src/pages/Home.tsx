@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-const QUIZ_URL = "https://seuformulario.com";
+const QUIZ_URL = "/quiz";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -57,8 +57,6 @@ export default function Home() {
               <motion.div variants={fadeUp} className="flex flex-col items-start gap-2">
                 <a
                   href={QUIZ_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center rounded-full px-9 py-4 text-base font-semibold transition-all duration-200 hover:scale-[1.03] hover:shadow-lg focus:outline-none"
                   style={{ background: "hsl(264, 56%, 72%)", color: "#fff" }}
                 >
@@ -267,8 +265,6 @@ export default function Home() {
             <motion.div variants={fadeUp} className="flex flex-col items-center gap-3">
               <a
                 href={QUIZ_URL}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-full px-10 py-4 text-base font-semibold transition-all duration-200 hover:scale-[1.03] hover:shadow-xl focus:outline-none"
                 style={{ background: "hsl(264, 56%, 72%)", color: "#fff" }}
               >
