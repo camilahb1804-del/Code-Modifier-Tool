@@ -1,17 +1,13 @@
-/* ── Mango AC (fonte principal) ────────────────────────────────────
-   Coloque o arquivo MangoAC.woff2 em public/fonts/ para ativar.
-   O bloco abaixo já está configurado — só adicione o arquivo.
-──────────────────────────────────────────────────────────────── */
+/* ── Sweet Mango (fonte principal — títulos e destaques) ──────── */
 @font-face {
-  font-family: 'Mango AC';
-  src: url('/fonts/MangoAC.woff2') format('woff2'),
-       url('/fonts/MangoAC.woff') format('woff');
-  font-weight: 400 700;
+  font-family: 'Sweet Mango';
+  src: url('/fonts/SweetMango.ttf') format('truetype');
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
-/* ── Inter (fonte secundária / corpo de texto) ──────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+/* ── Inter (fonte secundária — corpo de texto) ────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 @plugin "@tailwindcss/typography";
@@ -123,8 +119,8 @@
   --chart-4: 53 100% 78%;
   --chart-5: 21 83% 65%;
 
-  --app-font-sans: 'Mango AC', 'Inter', sans-serif;
-  --app-font-serif: 'Mango AC', 'Inter', sans-serif;
+  --app-font-sans: 'Sweet Mango', sans-serif;
+  --app-font-serif: 'Sweet Mango', sans-serif;
   --app-font-body: 'Inter', sans-serif;
   --app-font-mono: Menlo, monospace;
   --radius: .625rem;
