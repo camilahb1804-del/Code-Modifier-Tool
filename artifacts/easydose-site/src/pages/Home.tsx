@@ -63,7 +63,6 @@ export default function Home() {
                 >
                   Qual o melhor método para mim?
                 </a>
-                <span className="text-xs text-muted-foreground pl-2">Leva menos de 1 minuto</span>
               </motion.div>
             </motion.div>
 
@@ -274,7 +273,6 @@ export default function Home() {
               >
                 Qual o melhor método para mim?
               </a>
-              <span className="text-sm text-foreground/50">Leva menos de 1 minuto</span>
             </motion.div>
           </motion.div>
         </div>

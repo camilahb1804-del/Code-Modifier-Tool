@@ -5,10 +5,11 @@ export function Footer() {
     <footer className="border-t border-border bg-background">
       <div className="container px-5 py-12 mx-auto max-w-6xl flex flex-col md:flex-row justify-between items-center gap-6">
         <div className="flex flex-col items-center md:items-start gap-2">
-          <span className="font-serif text-xl tracking-wide">
-            <span style={{ color: "#6cb86c" }}>Easy</span>
-            <span style={{ color: "#5a90d4" }}>Dose</span>
-          </span>
+          <img
+            src="/images/easydose-logo.png"
+            alt="EasyDose"
+            className="h-16 w-auto object-contain"
+          />
           <p className="text-sm text-muted-foreground">
             Tornando a hora do remédio mais simples para todos.
           </p>
