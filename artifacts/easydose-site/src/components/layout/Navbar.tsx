@@ -1,11 +1,10 @@
-import { Link, useLocation } from "wouter";
+import { Link } from "wouter";
 import { useState } from "react";
 
 const QUIZ_URL = "https://seuformulario.com";
 
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [location] = useLocation();
 
   const navLinks = [
     { href: "/", label: "Início" },
@@ -15,14 +14,8 @@ export function Navbar() {
     { href: "/#contato", label: "Contato" },
   ];
 
-  const isActive = (href: string) => {
-    if (href.includes("#")) return false;
-    if (href === "/") return location === "/";
-    return location.startsWith(href);
-  };
-
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/90">
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       <div className="container flex h-20 items-center justify-between px-5 mx-auto max-w-6xl">
         <Link href="/" className="flex items-center">
           <img
@@ -37,20 +30,9 @@ export function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="relative text-sm font-medium transition-colors pb-1"
-              style={{
-                color: isActive(link.href)
-                  ? "hsl(var(--foreground))"
-                  : "hsl(var(--muted-foreground))",
-              }}
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
               {link.label}
-              {isActive(link.href) && (
-                <span
-                  className="absolute bottom-0 left-0 right-0 h-[2px] rounded-full"
-                  style={{ background: "hsl(264, 56%, 65%)" }}
-                />
-              )}
             </a>
           ))}
         </nav>
@@ -94,13 +76,7 @@ export function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium transition-colors py-1"
-              style={{
-                color: isActive(link.href)
-                  ? "hsl(var(--foreground))"
-                  : "hsl(var(--muted-foreground))",
-                fontWeight: isActive(link.href) ? 600 : 500,
-              }}
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-1"
               onClick={() => setMenuOpen(false)}
             >
               {link.label}

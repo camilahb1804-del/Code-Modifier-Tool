@@ -21,8 +21,10 @@ function OrgaBackground() {
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
     >
-      <ellipse cx="80" cy="560" rx="220" ry="170" fill="#E4C1F9" fillOpacity="0.22" />
-      <ellipse cx="320" cy="-30" rx="200" ry="150" fill="#91B2EB" fillOpacity="0.13" />
+      <ellipse cx="900" cy="120" rx="420" ry="340" fill="#BBE7BB" fillOpacity="0.28" />
+      <ellipse cx="1100" cy="600" rx="300" ry="220" fill="#91B2EB" fillOpacity="0.20" />
+      <ellipse cx="80" cy="500" rx="260" ry="200" fill="#E4C1F9" fillOpacity="0.18" />
+      <ellipse cx="300" cy="-40" rx="220" ry="180" fill="#91B2EB" fillOpacity="0.12" />
     </svg>
   );
 }
@@ -65,47 +67,33 @@ export default function Home() {
               </motion.div>
             </motion.div>
 
-            {/* Right visual — organic blob layout */}
+            {/* Right visual */}
             <motion.div
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-              className="relative hidden lg:flex items-center justify-center min-h-[460px]"
+              className="relative flex items-center justify-center"
             >
-              {/* Main green organic blob */}
               <div
-                className="absolute w-[380px] h-[420px]"
+                className="relative w-full max-w-md rounded-[2.5rem] overflow-hidden shadow-xl"
                 style={{
-                  background: "#BBE7BB",
-                  borderRadius: "58% 42% 68% 32% / 44% 56% 44% 56%",
-                  left: "50%",
-                  top: "50%",
-                  transform: "translate(-46%, -50%)",
+                  background: "linear-gradient(145deg, #e8f7e8 0%, #dceeff 60%, #f0e6fc 100%)",
+                  minHeight: "380px"
                 }}
-              />
-              {/* Blue blob — right edge */}
-              <div
-                className="absolute w-[160px] h-[260px]"
-                style={{
-                  background: "#91B2EB",
-                  borderRadius: "62% 38% 52% 48% / 48% 52% 62% 38%",
-                  right: "-10px",
-                  bottom: "30px",
-                  opacity: 0.75,
-                  zIndex: 0,
-                }}
-              />
-              {/* Floating info card */}
-              <div
-                className="absolute top-6 right-4 z-20 bg-white rounded-2xl p-5 shadow-md"
-                style={{ maxWidth: "210px" }}
               >
-                <p className="font-bold text-foreground text-sm leading-snug mb-2">
-                  Sem choro. Sem estresse. Sem luta.
-                </p>
-                <p className="text-xs text-muted-foreground leading-relaxed">
-                  Nossos produtos integram a medicação aos momentos naturais da criança — um canudo, uma chupeta, um copo.
-                </p>
+                <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 380" fill="none" aria-hidden="true">
+                  <ellipse cx="320" cy="60" rx="120" ry="90" fill="#BBE7BB" fillOpacity="0.4" />
+                  <ellipse cx="80" cy="300" rx="100" ry="80" fill="#91B2EB" fillOpacity="0.3" />
+                  <ellipse cx="200" cy="380" rx="180" ry="80" fill="#E4C1F9" fillOpacity="0.25" />
+                </svg>
+                <div className="relative z-10 flex flex-col items-center justify-center h-full min-h-[380px] text-center px-10 py-14">
+                  <p className="font-serif text-4xl text-foreground/80 mb-5 leading-snug" style={{ letterSpacing: "0.01em" }}>
+                    Sem choro.<br />Sem estresse.<br />Sem luta.
+                  </p>
+                  <p className="text-base text-muted-foreground leading-relaxed max-w-xs">
+                    Nossos produtos integram a medicação aos momentos naturais da criança — um canudo, uma chupeta, um copo.
+                  </p>
+                </div>
               </div>
             </motion.div>
           </div>
