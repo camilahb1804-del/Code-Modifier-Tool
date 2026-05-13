@@ -26,6 +26,7 @@ const products = [
     description: "Um canudo inteligente que permite a administração do medicamento líquido enquanto a criança bebe seu suco favorito. O design separa os fluxos até a boca, disfarçando o sabor amargo.",
     slides: [
       { src: "/images/canudo-caixa.png", label: "Com embalagem" },
+      { src: "/images/canudo-caixa-2.jpeg", label: "Com embalagem" },
       { src: "/images/canudo-produto.png", label: "Produto" },
     ] as ProductSlide[],
   },
@@ -35,6 +36,7 @@ const products = [
     description: "Criada para bebês que utilizam chupeta. Possui um compartimento traseiro para o medicamento, permitindo uma dosagem suave e sem sobressaltos, aproveitando o reflexo natural de sucção.",
     slides: [
       { src: "/images/chupeta-caixa.png", label: "Com embalagem" },
+      { src: "/images/chupeta-caixa-2.jpeg", label: "Com embalagem" },
     ] as ProductSlide[],
   },
   {
@@ -43,7 +45,9 @@ const products = [
     description: "Um copo com design especial que oculta comprimidos ou medicações trituradas. A criança foca apenas na bebida, ingerindo a dose completa sem estresse visual ou recusa prévia.",
     slides: [
       { src: "/images/copo-caixa.png", label: "Com embalagem" },
+      { src: "/images/copo-caixa-2.jpeg", label: "Com embalagem" },
       { src: "/images/copo-produto.png", label: "Produto" },
+      { src: "/images/copo-produto-2.jpeg", label: "Produto" },
     ] as ProductSlide[],
   },
 ];
@@ -93,7 +97,7 @@ function ProductCarousel({ slides }: { slides: ProductSlide[] }) {
       </span>
 
       <span className="absolute top-3 right-3 z-20 bg-muted text-muted-foreground text-xs font-medium uppercase tracking-wider px-3 py-1 rounded-full">
-        Em breve
+        ESGOTADO
       </span>
 
       {slides.length > 1 && (
@@ -210,7 +214,7 @@ export default function Shop() {
                       disabled={loading[product.id]}
                       className="w-full h-12 bg-primary text-primary-foreground hover:opacity-90 disabled:opacity-60"
                     >
-                      {loading[product.id] ? "Salvando…" : "Avise-me quando lançar"}
+                      {loading[product.id] ? "Salvando…" : "Avise-me quando voltar!"}
                     </Button>
                   </form>
                 )}
